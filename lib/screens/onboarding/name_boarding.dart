@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:zico/screens/onboarding/back_button.dart';
 
 class NameBoarding extends StatelessWidget {
@@ -18,12 +19,7 @@ class NameBoarding extends StatelessWidget {
           spacing: 30.h,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              children: [
-                50.verticalSpace,
-                backButton(),
-              ],
-            ),
+            Column(children: [50.verticalSpace, backButton()]),
             50.verticalSpace,
             Column(
               spacing: 8.h,
@@ -55,7 +51,10 @@ class NameBoarding extends StatelessWidget {
                 const Text("First Name"),
                 TextFormField(initialValue: "Anteqs"),
                 3.verticalSpace,
-                ElevatedButton(onPressed: () {}, child: const Text("Continue")),
+                ElevatedButton(
+                  onPressed: () => Get.toNamed("/meet-zico"),
+                  child: const Text("Continue"),
+                ),
               ],
             ),
           ],

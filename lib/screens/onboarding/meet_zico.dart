@@ -116,7 +116,10 @@ class MeetZico extends StatelessWidget {
                     horizontal: 16.w,
                     vertical: 30.h,
                   ),
-                  child: ElevatedButton(onPressed: () {}, child: Text("Next")),
+                  child: ElevatedButton(
+                    onPressed: () => Get.toNamed("/wellness-focus"),
+                    child: Text("Next"),
+                  ),
                 ),
               ],
             ),

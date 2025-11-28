@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zico/screens/onboarding/back_button.dart';
 
-class WellnessFocus extends StatefulWidget {
-  const WellnessFocus({super.key});
+class ReminderStyle extends StatefulWidget {
+  const ReminderStyle({super.key});
 
   @override
-  State<WellnessFocus> createState() => _WellnessFocusState();
+  State<ReminderStyle> createState() => _ReminderStyleState();
 }
 
-class _WellnessFocusState extends State<WellnessFocus> {
+class _ReminderStyleState extends State<ReminderStyle> {
   String? selectedOption;
 
   @override
@@ -32,13 +32,13 @@ class _WellnessFocusState extends State<WellnessFocus> {
               Column(
                 children: [
                   Text(
-                    "Your Wellness Focus",
+                    "Reminder Style",
                     style: themeContext.textTheme.headlineMedium,
                     textAlign: TextAlign.center,
                   ),
                   16.verticalSpace,
                   Text(
-                    "Clinton, what area of wellness would you like to focus on right now?",
+                    "Clinton, how would you like to receive your reminders?",
                     textAlign: TextAlign.center,
                     style: themeContext.textTheme.titleSmall!.copyWith(
                       color: themeContext.colorScheme.onSecondaryContainer,
@@ -47,12 +47,13 @@ class _WellnessFocusState extends State<WellnessFocus> {
                   40.verticalSpace,
                 ],
               ),
+
               // Options
-              _buildOptionTile("Physical", "physical"),
+              _buildOptionTile("Notifications only", "notifications"),
               16.verticalSpace,
-              _buildOptionTile("Emotional", "emotional"),
+              _buildOptionTile("Emails only", "emails"),
               16.verticalSpace,
-              _buildOptionTile("Both", "both"),
+              _buildOptionTile("Both notifications & emails", "both"),
 
               Spacer(),
 
@@ -61,7 +62,7 @@ class _WellnessFocusState extends State<WellnessFocus> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: selectedOption != null
-                      ? () => Get.toNamed("/reminder-style")
+                      ? () => Get.toNamed("/all-set")
                       : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: themeContext.colorScheme.primary,

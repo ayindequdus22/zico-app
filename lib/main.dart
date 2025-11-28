@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:zico/screens/onboarding/all_set.dart';
 import 'package:zico/screens/onboarding/get_started.dart';
 import 'package:zico/screens/onboarding/name_boarding.dart';
+import 'package:zico/screens/onboarding/reminder_style.dart';
 import 'package:zico/screens/onboarding/verify_email.dart';
 import 'package:zico/screens/onboarding/meet_zico.dart';
 import 'package:zico/screens/onboarding/wellness_focus.dart';
@@ -27,13 +29,21 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           themeMode: ThemeMode.light,
           theme: AppTheme.lightMode(context, MyColorScheme.lightColorScheme),
-          // theme: ,
-          // theme: AppTheme.lightMode(context),
-          // darkTheme: AppTheme.darkMode(context),
+         
           onGenerateRoute: (RouteSettings e) {
             switch (e.name) {
               case "/":
+                return getPage(widget: GetStarted());
+              case "/name-boarding":
+                return getPage(widget: NameBoarding());
+              case "/reminder-style":
+                return getPage(widget: ReminderStyle());
+              case "/wellness-focus":
                 return getPage(widget: WellnessFocus());
+              case "/meet-zico":
+                return getPage(widget: MeetZico());
+                 case "/all-set":
+                return getPage(widget: AllSet());
               default:
                 return getPage(widget: VerifyEmail());
             }

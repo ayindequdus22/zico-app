@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:zico/widgets/onboarding/divider.dart';
 
 class GetStarted extends StatelessWidget {
@@ -44,7 +45,10 @@ class GetStarted extends StatelessWidget {
                   TextFormField(),
                   Text("We’ll check if you already have an account."),
                   48.verticalSpace,
-                  ElevatedButton(onPressed: () {}, child: Text("Continue")),
+                  ElevatedButton(
+                    onPressed: () => Get.toNamed("/name-boarding"),
+                    child: Text("Continue"),
+                  ),
                   // 16.verticalSpace,
                 ],
               ),
