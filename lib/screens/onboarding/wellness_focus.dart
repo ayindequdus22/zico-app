@@ -109,7 +109,9 @@ class _WellnessFocusState extends State<WellnessFocus> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: isSelected ? Color(0xFF4B7FFF) : Colors.grey[400]!,
+                  color: isSelected
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.onSurface,
                   width: 2,
                 ),
                 color: Colors.white,
